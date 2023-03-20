@@ -50,7 +50,16 @@ public class SaveFragment extends Fragment
                 result.put("PhoneNumber", phonenumber);
 
                 saveNewData(name, phonenumber);
-                Toast.makeText(getActivity(), "등록되었습니다.", Toast.LENGTH_SHORT).show();
+
+                if ( et_name.length() != 0 && et_phonenumber.length() != 0 )
+                {
+                    Toast.makeText(getActivity(), "등록되었습니다", Toast.LENGTH_SHORT).show();
+                }
+
+                else {
+                    Toast.makeText(getActivity(), "등록 실패(이름과 전화번호를 모두 입력하세요)", Toast.LENGTH_SHORT).show();
+
+                }
             }
 
             private void saveNewData( String mname, String mphonenumber) {
