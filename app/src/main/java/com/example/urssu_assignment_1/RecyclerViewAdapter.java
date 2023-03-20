@@ -18,7 +18,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private ArrayList<RecyclerItem> list;
     private Context context;
 
-    // 생성자(데이터 리스트 객체 전달받음)
     public RecyclerViewAdapter( ArrayList<RecyclerItem> list, Context context)
     {
         this.list = list;
@@ -27,7 +26,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @NonNull
     @Override
-    // 각 아이템을 위한 뷰를 가진 뷰홀더 객체 반환
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
         View cardView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);

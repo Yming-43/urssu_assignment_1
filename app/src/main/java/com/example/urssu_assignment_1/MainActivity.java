@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // 객체 선언
         bottomNavigationView = findViewById(R.id.bottom_nav_menu);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener()
         {
@@ -49,14 +48,12 @@ public class MainActivity extends AppCompatActivity
         saveFragment = new SaveFragment();
         listFragment = new ListFragment();
 
-        // 처음 프래그먼트 지정
         setFrag(0);
 
 
 
     }
 
-    // fragment 전환
     private void setFrag(int n) {
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();

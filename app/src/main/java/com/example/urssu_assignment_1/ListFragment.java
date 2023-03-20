@@ -31,7 +31,6 @@ public class ListFragment extends Fragment
 {
     private View view;
 
-    // 파이어베이스
     private static FirebaseDatabase database;
     private DatabaseReference mDatabaseRef;
 
@@ -60,7 +59,7 @@ public class ListFragment extends Fragment
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot)
             {
-                arrayList.clear(); // 초기화
+                arrayList.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren())
                 {
                     RecyclerItem data = snapshot.getValue(RecyclerItem.class);
@@ -77,11 +76,8 @@ public class ListFragment extends Fragment
             }
         });
 
-        // 리사이클러뷰에 어댑터 연결
         adapter = new RecyclerViewAdapter(arrayList, getContext());
         recyclerView.setAdapter(adapter);
-
-
 
         return view;
     }
